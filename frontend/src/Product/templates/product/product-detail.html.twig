@@ -1,0 +1,60 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Details{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_class %}product-detail{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Product details</h1>
+        <div class="row">
+            <div class="col">
+                <img class="rounded mx-auto d-block" src="/images/app/product/{{ details.img }}.png"
+                     alt="Product Image" height="200px" width="200px">
+            </div>
+            <div class="col">
+                <h2>{{ details.title }}</h2>
+                <p>Description:</p>
+                <p>{{ details.description }}</p>
+                {% if stock != 0 %}
+                <h2 style="color: #1c7430">In stock: {{ stock }}</h2>
+                {% else %}
+                    <h2 style="color: red">Out of stock</h2>
+                {% endif %}
+                <p class="text-uppercase font-weight-bold h2">Price: {{ details.price }} $</p>
+                <a class="float-right" href="{{ path('product', {'action' : 'message'} )}}">
+                    Give us a Feedback!
+                </a>
+                {% if stock != 0 %}
+                <button data-id="{{ details.uuid.toString() }}" type="button" class="btn btn-success mt-auto addToCart">
+                    <i class="fas fa-shopping-cart"></i> Add to cart
+                </button>
+                {% else %}
+                    <button type="button" class="btn btn-success mt-auto" disabled>
+                        <i class="fas fa-shopping-cart"></i> Out of stock
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+        <div class="container mt-5">
+            <h1>Reviews: </h1>
+            {% if messages is not empty %}
+            {% for message in messages %}
+            <div class="row bg-light mb-3">
+                <div class="col-sm-3">
+                    <p class="font-weight-bold text-dark">
+                        {{ message.userDetail.firstName}} {{ message.userDetail.lastName }}</p>
+                    <p class="text-dark">Posted on : {{ message.created | date("d/m/Y") }}</p>
+                    <p class="text-dark">At : {{ message.created | date("g:i:s A") }}</p>
+                </div>
+                <div class="col-md-8">
+                    <h1>{{ message.title }}</h1>
+                    <p class="text-dark">{{ message.text }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

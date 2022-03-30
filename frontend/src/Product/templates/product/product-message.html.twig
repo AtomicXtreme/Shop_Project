@@ -1,0 +1,48 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Leave a comment{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_class %}product-message{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="contact-block">
+                    <h3>{% trans 'Leave a message' %}</h3>
+                    <p>{% trans 'Any issues or good feedback?' %}<br /><br />{% trans 'Write us here and we will get in touch with you as soon as possible.' %}</p>
+                    <hr />
+                    {{ messagesPartial('partial::alerts') }}
+                    {% set dummy = form.prepare() %}
+                    {% set dummy = form.setAttribute('id', 'contact_form') %}
+                    {{ form().openTag(form) | raw }}
+
+                    <div class="row">
+                        {% set title = form.get('title') %}
+                        {% set dummy = title.setAttribute('class', 'form-control') %}
+                        {% set dummy = title.setAttribute('id', 'title') %}
+                        {% set titleTranslatePlaceholder = title.getAttribute('placeholder')|trans|raw %}
+                        {% set dummy = title.setAttribute('placeholder', titleTranslatePlaceholder) %}
+                        <div class="col-md-12">
+                            {{ formElement(title) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {% set text = form.get('text') %}
+                        {% set dummy = text.setAttribute('class', 'form-control') %}
+                        {% set dummy = text.setAttribute('id', 'text') %}
+                        {% set textTranslatePlaceholder = text.getAttribute('placeholder')|trans|raw %}
+                        {% set dummy = text.setAttribute('placeholder', textTranslatePlaceholder) %}
+                        <div class="col-md-12">
+                            {{ formElement(text) }}
+                        </div>
+                    </div>
+                    <input type="submit" id="submit" value="Send message">
+                    {{ form().closeTag() | raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

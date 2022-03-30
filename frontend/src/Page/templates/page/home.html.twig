@@ -1,0 +1,279 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block page_title %}{% endblock %}
+
+{% block content %}
+    <div class="page-intro home-intro">
+        <div class="container">
+            <p class="welcome">DotKernel is a collection of</p>
+            <h1>PSR-7 Middleware applications</h1>
+            <p>Built on top of the Laminas microframework. <br/>Composed of a set of custom and extended Laminas components.</p>
+        </div>
+
+    </div>
+
+    <div class="home-list">
+        <div class="container">
+            <h2><a href="https://docs.mezzio.dev/mezzio/" target="_blank">Laminas</a></h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <h3>
+                        <a href="https://github.com/php-fig/container" target="_blank">
+                            containers
+                        </a>
+                    </h3>
+                    <p>
+                        DotKernel is built around the PSR-11 dependency container.
+                        We have chosen <b>Laminas Service Manager</b> as our default implementation.
+                    </p>
+                    <p>
+                        Get Started with <a href="https://github.com/laminas/laminas-servicemanager"
+                                            target="_blank">Laminas Service Manager</a>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>
+                        <a href="https://github.com/twigphp/Twig" target="_blank">
+                            templating
+                        </a>
+                    </h3>
+                    <p>
+                        By default, no middleware in Laminas is templated.
+                        For DotKernel's Frontend application, we have chosen <b>Twig</b>
+                        as the default templating engine.
+                    </p>
+                    <p>
+                        Get started with <a href="http://twig.sensiolabs.org/documentation"
+                                            target="_blank">Twig</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h3>
+                        <a href="https://github.com/nikic/FastRoute" target="_blank">
+                            routers
+                        </a>
+                    </h3>
+                    <p>
+                        Among the various routing implementations compatible with Expressive, we have chosen <b>FastRoute</b>
+                        as DotKernel's default routing library.
+                    </p>
+                    <p>
+                        Get started with <a href="https://github.com/nikic/FastRoute"
+                                            target="_blank">FastRoute</a>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>
+                        <a href="https://github.com/laminas/laminas-diactoros" target="_blank">
+                            http messages
+                        </a>
+                    </h3>
+                    <p>
+                        Laminas, and consequently DotKernel, is built around the PSR-7 standard. It uses <b>Laminas
+                            Diactoros</b> as the PSR-7 implementation.
+                    </p>
+                    <p>
+                        Get started with <a href="https://github.com/php-fig/http-message"
+                                            target="_blank">PSR-7</a> and <a
+                                href="https://github.com/laminas/laminas-diactoros"
+                                target="_blank">Diactoros</a>
+                    </p>
+                </div>
+            </div>
+
+            <h2>DotKernel components</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="accordion" id="dotkernelComponents">
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h4 class="">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Authorization
+                                    </button>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="collapse" data-parent="#dotkernelComponents"
+                                 aria-labelledby="headingTwo">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-authorization" target="_blank">dot-authorization</a>:
+                                            core authorization interfaces
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-rbac" target="_blank">dot-rbac</a>:
+                                            defines users roles
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-rbac-guard" target="_blank">dot-rbac-guard</a>:
+                                            authorize users based on various criteria
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h4 class="">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Controllers
+                                    </button>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#dotkernelComponents"
+                                 aria-labelledby="headingThree">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-controller" target="_blank">dot-controller</a>:
+                                            controller-like middleware for laminas
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h4 class="">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Forms
+                                    </button>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="collapse" data-parent="#dotkernelComponents"
+                                 aria-labelledby="headingFour">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-form"
+                                               target="_blank">dot-form</a>
+                                            (<a href="https://docs.laminas.dev/laminas-form/" target="_blank">laminas-form</a>)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <h4 class="">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Session
+                                    </button>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="collapse" data-parent="#dotkernelComponents"
+                                 aria-labelledby="headingFive">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-session" target="_blank">dot-session</a>
+                                            (<a href="https://docs.laminas.dev/laminas-session/" target="_blank">laminas-session</a>)
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-flashmessenger" target="_blank">dot-flashmessenger</a>:
+                                            short-lived session messages
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingSix">
+                                <h4 class="">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Mailing
+                                    </button>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="collapse" data-parent="#dotkernelComponents"
+                                 aria-labelledby="headingSix">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-mail" target="_blank">dot-mail</a>
+                                            (<a href="https://docs.laminas.dev/laminas-mail/" target="_blank">laminas-mail</a>)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingEight">
+                                <h4 class="panel-title">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        Navigation
+                                    </button>
+                                </h4>
+                            </div>
+                            <div id="collapseEight" class="collapse" data-parent="#dotkernelComponents"
+                                 aria-labelledby="headingEight">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-navigation" target="_blank">dot-navigation</a>:
+                                            easy menu configuration and parsing
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingNine">
+                                <h4 class="">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                        Others
+                                    </button>
+                                </h4>
+                            </div>
+                            <div id="collapseNine" class="collapse" data-parent="#dotkernelComponents"
+                                 aria-labelledby="headingNine">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-log" target="_blank">dot-log</a>
+                                            (<a href="https://docs.laminas.dev/laminas-log/"
+                                                target="_blank">laminas-log</a>)
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-errorhandler" target="_blank">dot-errorhandler</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-annotated-services"
+                                               target="_blank">dot-annotated-services</a>: creates and injects services
+                                            with dependencies through annotations
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-event"
+                                               target="_blank">dot-event</a>
+                                            (<a href="https://docs.laminas.dev/laminas-eventmanager/"
+                                                target="_blank">laminas-eventmanager</a>)
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-helpers" target="_blank">dot-helpers</a>
+                                            (<a href="https://docs.mezzio.dev/mezzio/v3/features/helpers/intro/"
+                                                target="_blank">mezzio/mezzio-helpers</a>)
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/dotkernel/dot-twigrenderer" target="_blank">dot-twigrenderer</a>
+                                            extends the twig renderer with useful extensions and customizations
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
